@@ -1,0 +1,41 @@
+body {
+  margin: 0;
+
+  overflow: hidden;
+  background-image: url("Fondo.jpg"); 
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+.contenedor {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-color: transparent;
+}
+
+.elemento {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  font-size: 30px;
+  animation: fall 5s linear infinite;
+}
+
+.elemento::before {
+  content: "🎃";
+  display: block;
+}
+
+@keyframes fall {
+  from {
+    transform: translateY(-30px);
+    left: calc(100% * var(--random-x));
+  }
+  to {
+    transform: translateY(calc(100vh + 30px));
+    left: calc(100% * var(--random-x));
+  }
+}
